@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Библиотека ЕКТ
+    = csrf_meta_tags
+    = csp_meta_tag
+    = favicon_link_tag asset_path('favicon.ico')
+
+  body
+    .container
+      .row
+        .col-lg-9
+          .notice
+            / p= notice
+          .alert
+            / p= alert
+          = yield
+          = javascript_pack_tag 'application'
+          = stylesheet_pack_tag 'application'

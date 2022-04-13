@@ -1,0 +1,43 @@
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous">
+<style> body { background: #0b9a42 } </style>
+
+<div class="container d-flex flex-column align-items-center">
+  <br>
+  <img src="/images/logo_book_2.png" class="rounded mx-auto d-block" alt="EKT group" width="323">
+  <br>
+
+  <div style="background: #ffffff; border-radius: 5px; padding: 3%" align="center">
+    <h1 class='display-4'>Вход</h1>
+    <blockquote class="blockquote">
+      <p class="mb-0">для сотрудников ЕКТ компани</p>
+    </blockquote>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div style="outline: 1px solid #d5d5d5">
+        <div class="card-body">
+          <%= f.label 'Email' %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          <%= f.label 'Пароль' %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        </div>
+      </div>
+
+      <%# if devise_mapping.rememberable? %>
+<!--        <div class="form-check">-->
+          <%#= f.check_box :remember_me, class: 'form-check-input' %>
+          <%#= f.label 'Запомнить меня', class: 'form-check-label' %>
+<!--        </div>-->
+      <%# end %>
+
+      <br>
+      <div class="actions">
+        <%= f.submit "Войти", class: "btn btn-success btn-lg btn-block", width: "20px" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
